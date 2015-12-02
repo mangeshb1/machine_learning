@@ -1,0 +1,5 @@
+mkcollection -c blue.mf -l music "G:\SFU\Sem 1\726\Project\Data\genres\blues"
+
+bextract -fe -mfcc "blue.mf" -w blues.arff     ##only extract features over interval
+
+bextract -sv -mfcc "blue.mf" -w blues.arff    ##overall features 
