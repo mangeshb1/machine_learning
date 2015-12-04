@@ -1,0 +1,8 @@
+//Command to generate model and get probabilities for each class
+
+java -cp ./weka.jar weka.classifiers.bayes.NaiveBayes -p 10 -distribution -d train.model -t JoinedTrain.arff -T JoinedTest.arff
+
+
+//Command to test on generated model
+
+java -cp ./weka.jar weka.classifiers.Evaluation weka.classifiers.bayes.NaiveBayes -p 10 -distribution -l train.model -T test.arff
