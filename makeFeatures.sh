@@ -1,18 +1,29 @@
-./mkcollection -c train.mf  "/home/jivjot/git/musicGenre/random/Train" 
+echo $1
+echo $2
+
+if [ $# -ne 2 ]; then
+  exit 1
+fi
+mkdir DATA
+
+./mkcollection -c DATA/$2.mf  $1
 #./bextract -n -fe -mfcc "train.mf" -w train.arff    ##overall features 
 #./bextract  -n -sv -mfcc "train.mf" -w train.arff    ##overall features 
-#./bextract  -n -sv  "train.mf" -w train.arff    ##overall features 
+./bextract  -n -sv  "DATA/$2.mf" -w temp.arff    ##overall features 
 #./bextract  -n -fe "train.mf" -w train.arff    ##overall features 
-java weka.core.converters.CSVSaver -i MARSYAS_EMPTYtrain.arff -o train.csv
-cat train.csv | rev | cut -d"," -f1 --complement|rev > train1.csv
-cp train1.csv train.csv
-rm train1.csv
-echo Label > labelsTrain.txt
-echo Label > labelsNTrain.txt
+mv MARSYAS_EMPTYtemp.arff DATA/MARSYAS_EMPTY$2.arff
+java weka.core.converters.CSVSaver -i DATA/MARSYAS_EMPTY$2.arff -o DATA/$2.csv
+cat DATA/$2.csv | rev | cut -d"," -f1 --complement|rev > DATA/$2tmp.csv
+cp DATA/$2tmp.csv DATA/$2.csv
+rm DATA/$2tmp.csv
+echo Label > DATA/labels$2.txt
+echo Label > DATA/labelsN$2.txt
 
-cat MARSYAS_EMPTYtrain.arff |grep filename | cut -d"." -f1| rev |cut -d"/" -f1|rev >> labelsTrain.txt
-for d in `cat labelsTrain.txt`
+cat DATA/MARSYAS_EMPTY$2.arff |grep filename | cut -d"." -f1| rev |cut -d"/" -f1|rev >> DATA/labels$2.txt
+for d in `cat DATA/labels$2.txt`
 do 
-./labelMap.sh $d >> labelsNTrain.txt
+./labelMap.sh $d >> DATA/labelsN$2.txt
 done
-paste train.csv labelsNTrain.txt -d","> JoinedTrain.csv
+paste DATA/$2.csv DATA/labels$2.txt -d","> DATA/Joined$2.csv
+
+java -cp weka.jar weka.core.converters.CSVLoader  DATA/Joined$2.csv > DATA/Joined$2.arff
