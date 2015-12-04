@@ -1,0 +1,11 @@
+For features extraction, we used the framework for audio analysis of MARSYAS software, written by George Tzanetakis [20]. MARSYAS is implemented in C++ and retains the ability to output feature extraction data to ARFF format [21]. With the tool bextract.exe, the following features can be extracted: Zero Cross- ings, Spectral Centroid, Spectral Flux, Spectral Rolloff, Mel-Frequency Cepstral Coefficients (MFCC), and chroma features - 31 features in total.
+
+
+For each of these basic features, four statistic features were calculated: 1. The mean of the mean (calculate mean over the 20 frames, and then calculate the mean of this statistic over the entire segment); 2. The mean of the standard deviation (calculate the standard deviation of the feature over 20 frames, and then calculate the mean these standard deviations over the entire segment); 3. The standard deviation of the mean (calculate the mean of the feature over
+Mood Tracking of Radio Station Broadcasts 187
+20 frames, and then calculate the standard deviation of these values over the entire segment); 4. The standard deviation of the standard deviation (calculate the standard deviation of the feature over 20 frames, and then calculate the standard deviation of these values over the entire segment). In this way, we obtained 124 features.
+The input data during features extraction were 6-second segments in wav format, sample rate 22050, channels: 1, Bits: 16.
+An example of using bextract.exe from the MARSYAS v0.2 package to extract features:
+bextract.exe -fe -sv colllection -w outputFile
+where collection is file with list of input files and outputFile is name of output file in ARFF format.
+For each 6-second file we obtained a representative single feature vector. The obtained vectors were used for building classifiers and for predicting new in- stances.
