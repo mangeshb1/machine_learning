@@ -13,7 +13,7 @@ collectionFile = 'single.mf'
 featureFile = 'singleFeatures.arff'
 filepath = 'output/'
 bextract_single = 'bextract_'+collectionFile
- 
+
 def createOutputDirectory():
 	if not os.path.isdir('output'):
 		os.system('mkdir {}'.format('output'))

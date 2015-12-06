@@ -1,0 +1,11 @@
+rm(list = ls())
+arg = commandArgs(trailingOnly=TRUE)
+library('kknn')
+data=readRDS('models/knn.model')
+kN=readRDS('models/knnK.model')
+test=read.csv(arg[[1]])
+model <- kknn(Label ~ .,data,test,k = kN,kernel = "gaussian")
+p = fitted(model)
+print(sum(p == test$Label)*100/nrow(test))
+write.csv(model$prob,arg[[2]],row.names = FALSE)
+

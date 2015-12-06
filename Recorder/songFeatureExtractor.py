@@ -12,7 +12,7 @@ collectionFile = 'single.mf'
 featureFile = 'singleFeatures.arff'
 filepath = 'output/'
 bextract_single = 'bextract_'+collectionFile
- 
+
 def createOutputDirectory():
 	if not os.path.isdir('output'):
 		os.system('mkdir {}'.format('output'))
@@ -28,7 +28,7 @@ def removeOldFiles():
 		os.system('rm -r {}'.format(bextract_single))
 
 def makeCollection():
-	os.system('{}/mkcollection -c {} {}'.format(libpath, collectionFile, filepath))
+	os.system('sleep 5 && {}/mkcollection -c {} {}'.format(libpath, collectionFile, filepath))
 
 def exractFeatures():
 	os.system('{}/bextract -sv {} -w {}'.format(libpath, collectionFile, featureFile))
@@ -37,5 +37,5 @@ def exractFeatures():
 createOutputDirectory()
 removeOldFiles()
 record.recorder()
-makeCollection()
-exractFeatures()
+#makeCollection()
+#exractFeatures()
