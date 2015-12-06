@@ -1,14 +1,12 @@
 args = commandArgs(trailingOnly=TRUE)
-## labels
-labels<-read.csv(args[[1]])
 
 ## SVM
-svmRes<-read.csv(args[[2]])
+svmRes<-read.csv(args[[1]])
 
 ##
-bayesRes<-read.csv(args[[3]])
+bayesRes<-read.csv(args[[2]])
 ##
-kNNRes<-read.csv(args[[4]])
+kNNRes<-read.csv(args[[3]])
 
 weightSvm<-0.58
 svmResW=svmRes*weightSvm
@@ -23,5 +21,4 @@ kNNResW=kNNRes*weightkNN
 aggRes=bayesResW
 aggRes=bayesResW + svmResW + kNNResW
 choice=apply(-aggRes,1,order)
-acc =  sum(choice[1,] == labels)/nrow(labels)
-print(acc)
+

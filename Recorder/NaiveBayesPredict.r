@@ -1,0 +1,6 @@
+args = commandArgs(trailingOnly=TRUE)
+library('e1071')
+model=readRDS('models/RNaiveBayes.model')
+data=read.csv(args[[1]])
+p=predict(model,data,type = "raw")
+write.csv(p,args[[2]],row.names = FALSE)
