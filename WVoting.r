@@ -1,3 +1,4 @@
+library('caret')
 args = commandArgs(trailingOnly=TRUE)
 ## labels
 labels<-read.csv(args[[1]])
@@ -25,3 +26,4 @@ aggRes=bayesResW + svmResW + kNNResW
 choice=apply(-aggRes,1,order)
 acc =  sum(choice[1,] == labels)/nrow(labels)
 print(acc)
+print(confusionMatrix(choice[1,],labels))
