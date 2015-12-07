@@ -20,5 +20,14 @@ kNNResW=kNNRes*weightkNN
 
 aggRes=bayesResW
 aggRes=bayesResW + svmResW + kNNResW
-choice=apply(-aggRes,1,order)
 
+printResult=function(arg)
+{
+    for(i in order(-arg))
+    {
+        print(arg[i])
+    }
+}
+
+
+tmp = apply(aggRes,1,printResult)
