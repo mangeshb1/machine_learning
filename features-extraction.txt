@@ -1,4 +1,4 @@
-For features extraction, we used the framework for audio analysis of MARSYAS software, written by George Tzanetakis [20]. MARSYAS is implemented in C++ and retains the ability to output feature extraction data to ARFF format [21]. With the tool bextract.exe, the following features can be extracted: Zero Cross- ings, Spectral Centroid, Spectral Flux, Spectral Rolloff, Mel-Frequency Cepstral Coefficients (MFCC), and chroma features - 31 features in total.
+For features extraction, we used the framework for audio analysis of MARSYAS software, written by George Tzanetakis [20]. MARSYAS is implemented in C++ and retains the ability to output feature extraction data to ARFF format [21]. With the tool bextract.exe, the following features can be extracted: Zero Crossings, Spectral Centroid, Spectral Flux, Spectral Rolloff, Mel-Frequency Cepstral Coefficients (MFCC), and chroma features - 31 features in total.
 
 
 For each of these basic features, four statistic features were calculated: 1. The mean of the mean (calculate mean over the 20 frames, and then calculate the mean of this statistic over the entire segment); 2. The mean of the standard deviation (calculate the standard deviation of the feature over 20 frames, and then calculate the mean these standard deviations over the entire segment); 3. The standard deviation of the mean (calculate the mean of the feature over
@@ -9,3 +9,16 @@ An example of using bextract.exe from the MARSYAS v0.2 package to extract featur
 bextract.exe -fe -sv colllection -w outputFile
 where collection is file with list of input files and outputFile is name of output file in ARFF format.
 For each 6-second file we obtained a representative single feature vector. The obtained vectors were used for building classifiers and for predicting new in- stances.
+
+Zero Crossings: A zero-crossing is a point where the sign of a mathematical function changes (e.g. from positive to negative), represented by a crossing of the axis (zero value) in the graph of the function.
+
+Spectral Centroid: The spectral centroid is a measure used in digital signal processing to characterise a spectrum. It indicates where the "center of mass" of the spectrum is. Perceptually, it has a robust connection with the impression of "brightness" of a sound.
+
+Spectral Flux: Spectral flux is a measure of how quickly the power spectrum of a signal is changing, calculated by comparing the power spectrum for one frame against the power spectrum from the previous frame.
+
+Spectral RollOff: Spectral rolloff point is defined as the Nth percentile of the power spectral distribution, where N is usually 85% or 95%. The rolloff point is the frequency below which the N% of the magnitude distribution is concentrated.
+
+MFCC: In sound processing, the mel-frequency cepstrum (MFC) is a representation of the short-term power spectrum of a sound, based on a linear cosine transform of a log power spectrum on a nonlinear mel scale of frequency.
+
+Chroma Features: Chroma features are an interesting and powerful representation for music audio in which the entire spectrum is projected onto 12 bins representing the 12 distinct semitones (or chroma) of the musical octave.
+
