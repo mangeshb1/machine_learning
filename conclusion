@@ -1,0 +1,6 @@
+Once we have found the best weights using the validation set, we calculate the model accuracy on test set. Test accuracies for SVM, Naive Bayes, KNN, WMA were 70%, 55.33 %, 76 %, 74.67 % respectively.  But once we take a closer look into Test data ROC curves for each labels, we observe that area under the curve for WMA is consistently better than the other models. 
+Although overall Test Accuracy for KNN is better than WMA, but story changes when we see the the respective recall and precision values. Recall values for KNN is marginally better than WMA, whereas Precision values for WMA is consistently better than KNN.
+In conclusion we state that WMA is more robust and a better model. By using WMA, we can improve test accuracy which would have not been possible we using traditional classification techniques.
+
+We have approached this problem by dividing the music into 10 genres, but in reality music does not belong one particular class. Their is no fine distinction between genres and sometimes, it is difficult for even humans to clearly separate different genres, for instance rock or metal, pop or hip hop. Accuracy reported here does not capture similarity of different genres. 
+
