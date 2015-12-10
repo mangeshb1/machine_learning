@@ -3,7 +3,7 @@
 	
 [2] Changsheng Xu, Namunu C. Maddage, and Xi Shao, "Automatic Music Classification and Summarization", 
     IEEE TRANSACTIONS ON SPEECH AND AUDIO PROCESSING, VOL. 13, NO. 3, MAY 2005
-	
+
 [3] Michael I. Mandel, Graham E. Poliner and Daniel P. W. Ellis, "Support Vector Machine Active Learning for Music Retrieval",
     Multimedia Systems Volume 12 Columbia University Academic Commons, http://academiccommons.columbia.edu/catalog/ac%3A144461
 
