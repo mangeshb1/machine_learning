@@ -1,0 +1,21 @@
+Please cite the following paper:
+
+Chih-Chung Chang and Chih-Jen Lin, LIBSVM : a library for support vector machines. ACM Transactions on Intelligent Systems and Technology, 2:27:1--27:27, 2011. Software available at http://www.csie.ntu.edu.tw/~cjlin/libsvm
+
+The bibtex format is
+
+@article{CC01a,
+ author = {Chang, Chih-Chung and Lin, Chih-Jen},
+ title = {{LIBSVM}: A library for support vector machines},
+ journal = {ACM Transactions on Intelligent Systems and Technology},
+ volume = {2},
+ issue = {3},
+ year = {2011},
+ pages = {27:1--27:27},
+ note =  {Software available at \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm}}
+}
+
+Hechenbichler K. and Schliep K.P. (2004) Weighted k-Nearest-Neighbor Techniques and Ordinal
+Classification, Discussion Paper 399, SFB 386, Ludwig-Maximilians University Munich (http:
+//www.stat.uni-muenchen.de/sfb386/papers/dsp/paper399.ps)
+Hechenbichler K. (2005) Ensemble-Techniken und ordinale Klassifikation, PhD-thesis
