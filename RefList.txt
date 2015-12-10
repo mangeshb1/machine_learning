@@ -1,0 +1,11 @@
+[1] Zhouyu Fu, Guojun Lu, Kai Ming Ting, and Dengsheng Zhang, ”A Survey of Audio-Based Music Classification and Annotation”,
+    IEEE TRANSACTIONS ON MULTIMEDIA, VOL. 13, NO. 2, APRIL 2011
+	
+[2] Changsheng Xu, Namunu C. Maddage, and Xi Shao, "Automatic Music Classification and Summarization", 
+    IEEE TRANSACTIONS ON SPEECH AND AUDIO PROCESSING, VOL. 13, NO. 3, MAY 2005
+	
+[3] Michael I. Mandel, Graham E. Poliner and Daniel P. W. Ellis, "Support Vector Machine Active Learning for Music Retrieval",
+    Multimedia Systems Volume 12 Columbia University Academic Commons, http://academiccommons.columbia.edu/catalog/ac%3A144461
+
+[4] Deepa, P.L. and Suresh, K., "An optimized feature set for music genre classification based on Support Vector Machine",
+    Recent Advances in Intelligent Computational Systems (RAICS), 2011 IEEE
