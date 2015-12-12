@@ -1,11 +1,9 @@
-Hey  Guys.
-I am writing all possible subtasks in priority order.
-According to your bamdwitdth, please pick and start
+Tasks
 
-1. divide data into training, test, validation -> done bikram
-2. get one set of features from a library -> hopefully done
-3. create a generic script for svm and gives a model 
-4. create a generic script for svm which takes in  new example and gives probability for each genre
+1. divide data into training, test, validation 
+2. get one set of features from a library 
+3. create a generic script for svm, Naive Bayes, k nearest neighbor and gives a model 
+4. create a generic script for which takes in  new example and gives probability for each genre
 5. create a generic script for nn and gives a model 
 6. create a generic script for nn which takes in  new example and gives probability for each genre
 7. create a generic boosting script which gives combined probability 
